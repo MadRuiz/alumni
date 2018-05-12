@@ -1,0 +1,100 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Instituciones / Universidades <small>que imparten lo diferentes estudios</small></h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a type="button" class="" data-toggle="modal" data-target=".nuevaInsForm"><i class="fa fa-plus"></i> Nueva </a></li>
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <?php
+      $contador = 0;
+      $selectIns = "SELECT * FROM `institucion`";
+      $rselectIns = mysqli_query($conexion, $selectIns);
+      //count para id instituciones -NO SE PORQUE TIENE QUE ESTAR AQUI PARA QUE FUNCIONE!
+      $selectNumIns = "SELECT COUNT(*) from estudio";
+      $rselectNumIns = mysqli_query($conexion, $selectNumIns);
+      $nIns = mysqli_fetch_array($rselectNumIns);
+       ?>
+      <table class='table table-striped bulk_action' id="tabla_ins">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Pais</th>
+            <th>Ciudad</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          // ---------------tabla---------------
+            while ($fila = mysqli_fetch_array($rselectIns)) {
+              $contador++;
+              echo "
+              <tr>
+                <th scope='row'>".$contador."</th>
+                <td>".$fila['nombre_ins']."</td>
+                <td>".$fila['pais_ins']."</td>
+                <td>".$fila['ciudad_ins']."</td>
+                <td>".$fila['tel_ins']."</td>
+                <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
+                <td><a type='button' class='btn' href='../src/php/delete_ins.php?id_inst=".$fila['id_inst']."'>
+                      <i class='fa fa-trash-o'></i>
+                    </a>
+                </td>
+              </tr>";
+               }
+              ?>
+        </tbody>
+      </table>
+      <!-- formulario ingreso instituciones-->
+            <div class='modal fade nuevaInsForm' tabindex='-1' role='dialog' aria-hidden='true'>
+              <div class='modal-dialog modal-lg'>
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Agregar Institucion</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal form-label-left" action="../src/php/insert_ins.php" method="get">
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input required type="text" class="form-control" placeholder="Lugar donde se imparte" name="nombre_ins">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pais</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input required type="text" class="form-control" placeholder="" name="pais_ins">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input required type="text" class="form-control" placeholder="" name="ciudad_ins">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="number" class="form-control" name="tel_ins">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+                    <button type="submit" class="btn btn-primary" value="submit" onclick="">Guardar cambios</button>
+                      </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
