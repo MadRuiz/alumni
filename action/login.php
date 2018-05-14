@@ -15,7 +15,7 @@
 			
 
 				$_SESSION['user_id'] = $row['id'];
-				header("location: ../production/estudios.php");
+				header("location: ../production/admin_estudios.php");
 				
 
 		}else{
