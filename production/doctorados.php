@@ -17,9 +17,6 @@
       $selectNumDoc = "SELECT COUNT(*) from estudio";
       $rselectNumDoc = mysqli_query($conexion, $selectNumDoc);
       $nDocs = mysqli_fetch_array($rselectNumDoc);
-      //select para escoger Institucion
-      $selectIns = "SELECT institucion.id_inst, institucion.nombre_ins FROM institucion";
-      $rselectIns = mysqli_query($conexion, $selectIns);
        ?>
       <table class='table table-striped' id="tabla_doc">
         <thead>

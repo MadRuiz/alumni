@@ -23,9 +23,11 @@
           <tr>
             <th>#</th>
             <th>Nombre</th>
-            <th>Pais</th>
+            <th>País</th>
             <th>Ciudad</th>
             <th>Telefono</th>
+            <th>Correo</th>
+            <th>Sitio web</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +41,9 @@
                 <td>".$fila['nombre_ins']."</td>
                 <td>".$fila['pais_ins']."</td>
                 <td>".$fila['ciudad_ins']."</td>
-                <td>".$fila['tel_ins']."</td>
+                <td>".$fila['telefono_ins']."</td>
+                <td>".$fila['correo_ins']."</td>
+                <td>".$fila['sitio_ins']."</td>
                 <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
                 <td><a type='button' class='btn' href='../src/php/delete_ins.php?id_inst=".$fila['id_inst']."'>
                       <i class='fa fa-trash-o'></i>

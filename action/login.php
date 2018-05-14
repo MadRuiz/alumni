@@ -1,11 +1,8 @@
 <?php
 	session_start();
-
 	if (isset($_POST['token']) && $_POST['token']!=='') {
-			
 	//Contiene las variables de configuracion para conectar a la base de datos
 	include "../production/conexion.php";
-
 	$email=mysqli_real_escape_string($conexion,(strip_tags($_POST["email"],ENT_QUOTES)));
 	$password=sha1(md5(mysqli_real_escape_string($conexion,(strip_tags($_POST["password"],ENT_QUOTES)))));
 

@@ -10,8 +10,8 @@
     </div>
     <div class="x_content">
       <?php
-        $contador = 0;
-        $selectProg = "SELECT * FROM `programas` WHERE programas.id_prog != 0";
+        $contador2 = 0;
+        $selectProg = "SELECT programas.*, sponsor.nombre_spon FROM programas INNER JOIN sponsor WHERE programas.sponsor_prog = sponsor.id_spon";
         $rselectProg = mysqli_query($conexion, $selectProg);
         //count para id instituciones -NO SE PORQUE TIENE QUE ESTAR AQUI PARA QUE FUNCIONE!
         $selectNumIns = "SELECT COUNT(*) from estudio";
@@ -37,7 +37,7 @@
                 <th scope='row'>".$contador."</th>
                 <td>".$fila['id_prog']."</td>
                 <td>".$fila['nombre_prog']."</td>
-                <td>".$fila['sponsor']."</td>
+                <td>".$fila['nombre_spon']."</td>
                 <td>".$fila['descripcion_prog']."</td>
                 <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
                 <td><a type='button' class='btn' href='../src/php/delete_prog.php?id_prog=".$fila['id_prog']."'>

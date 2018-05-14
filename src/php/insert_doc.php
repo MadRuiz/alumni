@@ -31,12 +31,9 @@ include '../../production/conexion.php';
                 '".$doc_descripcion."'
                 )";
                 if(mysqli_query($conexion, $insert_doc)){
-                  header('Location: ../../production/administrar.php');
+                  header('Location: ../../admin/admin_estudios.php');
                  } else{
                   echo "ERROR: Could not able to execute $insert_doc. " . mysqli_error($conexion);
                 }
-
-
-
 mysqli_close($conexion);
 ?>
