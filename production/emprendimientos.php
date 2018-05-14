@@ -18,9 +18,7 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <?php 
-      include 'conexion.php';
-     ?>
+    <?php include 'conexion.php';  ?>
   </head>
 
   <body class="nav-md">
@@ -39,7 +37,7 @@
     <div class="container body">
       <div class="main_container">
         <!-- menu y header-->
-        <?php include 'head_n_menu.php'; ?>
+        <?php include 'head_user.php'; ?>
         <!-- / menu y header-->
 
         <!-- page content -->

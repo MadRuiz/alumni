@@ -32,7 +32,7 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-      <?php include 'head_n_menu.php'; ?>
+      <?php include 'head_user.php'; ?>
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">

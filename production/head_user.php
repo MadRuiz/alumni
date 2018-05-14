@@ -13,7 +13,6 @@
   
     }
 
-
 ?>        
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -44,19 +43,6 @@
                   <li><a href="bolsadetrabajo.php"><i class="fa fa-briefcase"></i> Bolsa de trabajo</a></li>
                   <li><a href="estudios.php"><i class="fa fa-book"></i> Estudios contínuos </a></li>
                   <li><a href="emprendimientos.php"><i class="fa fa-cogs"></i> Emprendimientos</a></li>
-                </ul>
-              </div>
-              <div class="menu_section" id="admin_panel">
-                <h3>Administración</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-sitemap"></i> Panel de control <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="admin_estudios.php">Estudios contínuos</a>
-                      <li><a href="page_404.html">Emprendimiento</a>
-                      <li><a href="page_404.html">Bolsa de trabajo</a>
-                      <li><a href="page_404.html">Articulos</a>
-                    </ul>
-                  </li>
                 </ul>
               </div>
             </div>

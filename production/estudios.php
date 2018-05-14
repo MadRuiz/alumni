@@ -123,7 +123,7 @@
     <div class="container body">
       <div class="main_container">
         <!-- menu y header-->
-        <?php include 'head_n_menu.php'; ?>
+        <?php include 'head_user.php'; ?>
         <!-- / menu y header-->
         <!-- page content -->
         <div class="right_col" role="main">
