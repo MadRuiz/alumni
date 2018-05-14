@@ -25,13 +25,13 @@
 
   <body class="nav-md">
     <?php
-      include 'conexion.php';
+      include '../production/conexion.php';
       //select para escoger Rubro
 
      ?>
     <div class="container body">
       <div class="main_container">
-      <?php include 'head_admin.php'; ?>
+      <?php include '../production/head_admin.php'; ?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -44,27 +44,27 @@
             <div class="row">
               <?php
                //---------------instituciones---------------
-                include 'instituciones.php';
+                include '../production/instituciones.php';
                ?>
               <?php
                 //---------------programa de becas---------------
-                include 'programabecas.php';
+                include '../production/programabecas.php';
               ?>
               <?php
                //---------------doctorados----------------------
-                include 'doctorados.php';
+                include '../production/doctorados.php';
               ?>
               <?php
                //---------------maestrias----------------------
-                include 'maestrias.php';
+                include '../production/maestrias.php';
                ?>
                <?php
                //---------------postgrados----------------------
-                include 'postgrados.php';
+                include '../production/postgrados.php';
                 ?>
                 <?php
                 //---------------diplomados----------------------
-                  include 'diplomados.php';
+                  include '../production/diplomados.php';
                  ?>
             </div>
           </div>

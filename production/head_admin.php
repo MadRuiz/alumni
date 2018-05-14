@@ -42,9 +42,9 @@
                   <li><a><i class="fa fa-sitemap"></i> Panel de control <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="admin_estudios.php">Estudios contínuos</a>
-                      <li><a href="page_404.html">Emprendimiento</a>
-                      <li><a href="page_404.html">Bolsa de trabajo</a>
-                      <li><a href="page_404.html">Articulos</a>
+                      <li><a href="admin_emprender.php">Emprendimientos</a>
+                      <li><a href="admin_bolsa.php">Bolsa de trabajo</a>
+                      <li><a href="admin_users.php">Usuarios</a>
                     </ul>
                   </li>
                 </ul>

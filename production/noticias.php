@@ -37,56 +37,38 @@
         <div class="right_col" role="main">
             <div class="">
               <div class="title_left">
-                <h3>Noticias</h3>
+                <h3>Noticias</h3><br>
               </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Ir!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div
-            <div class="x_content">
-                    <div class="row">
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-caret-square-o-right"></i>
-                          </div>
-                          <div class="count">179</div>
-
-                          <h3>Lo mas leido</h3>
-                          <p></p>
-                        </div>
-                      </div>
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-comments-o"></i>
-                          </div>
-                          <div class="count">179</div>
-
-                          <h3>Nuevas tecnologias</h3>
-                          <p></p>
-                        </div>
-                      </div>
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-sort-amount-desc"></i>
-                          </div>
-                          
-                      </div>
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-check-square-o"></i>
-                          </div>
-                          
-                      </div>
+               <div id="carousel" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <br>
+                    <div class="item active">
+                      <img src="images/emprender.jpg" alt="...">
+                      <div class="carousel-caption"> Imagen1 </div>
                     </div>
-                  </div>
+                    <div class="item">
+                      <img src="..." alt="...">
+                      <div class="carousel-caption"> Imagen2 </div>
+                    </div>
+                    <div class="item">
+                      <img src="..." alt="...">
+                      <div class="carousel-caption"> Imagen3 </div>
+                    </div>
+                  </div>                 
+                  <a class="left carousel-control" href="#carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                </div>    
+ 
+           
             <div class="clearfix"></div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="x_panel">
@@ -165,7 +147,7 @@
                 </div>
               </div>
             </div>
-                        <div class="col-md-6">
+            <div class="col-md-6">
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Ultimos usuarios activos <small>Sessiones</small></h2>
@@ -239,6 +221,41 @@
           </div>
           <div class="clearfix"></div>
         </div>
+        <div class="x_content">
+                    <br />
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Titulo de la noticia<span class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Contenido de la noticia <span class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                         <input name="uploadedfile" type="file" />
+                        <input type="submit" value="Subir archivo" />
+                        </form>
+                        </div>
+                      </div>
+    
+                     
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button">Cancelar</button>
+                          <button type="submit" class="btn btn-success">Publicar</button>
+                         
+                        </div>
+                      </div>
         <!-- /page content -->
 </div>
         <!-- footer content -->
@@ -247,12 +264,7 @@
       </div>
     </div>
 
-    <div id="custom_notifications" class="custom-notifications dsp_none">
-      <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-      </ul>
-      <div class="clearfix"></div>
-      <div id="notif-group" class="tabbed_notifications"></div>
-    </div>
+
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
