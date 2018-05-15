@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin Alumni |  </title>
+    <title>Alumnni - Admin</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,71 +15,50 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+   <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+     <script type="text/javascript" src="../src/js/alertas.js"> </script>
   </head>
 
   <body class="nav-md">
+    <?php
+      include '../production/conexion.php';
+     ?>
     <div class="container body">
       <div class="main_container">
-      <?php include '../production/head_admin.php'; ?>
+        <?php include '../production/head_admin.php'; ?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Administrar Bolsa de trabajo</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
+                <h3>Mi panel <small>Administración de módulos en emprendimiento</small></h3>
               </div>
             </div>
-
             <div class="clearfix"></div>
-
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Administrar</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      Add content to the page ...
-                  </div>
-                </div>
-              </div>
+              <?php
+               //---------------emprendimientos---------------
+                include 'cargos.php';
+              ?>
+              <?php
+               //---------------capacitaciones---------------
+                include 'empresas.php';
+               ?>
+              <?php
+               //---------------financiamientos---------------
+                include 'ofertas.php';
+               ?>
             </div>
           </div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
-<?php include '../production/footer.php'; ?>
+        <?php include '../production/footer.php'; ?>
         <!-- /footer content -->
       </div>
     </div>
@@ -92,7 +71,9 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
-    
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
   </body>
