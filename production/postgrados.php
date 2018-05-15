@@ -22,8 +22,46 @@
           </tr>
         </thead>
         <tbody>
-
-            </tbody>
+          <?php
+            include '../src/php/selects.php';
+            // ---------------tabla---------------
+            $contador = 0;
+            $selectPosg = "SELECT 
+                            estudio.id_est, 
+                            estudio.nombre_est, 
+                            estudio.descripcion_est, 
+                            institucion.nombre_ins, 
+                            rubros.nombre_tag, 
+                            estudio.duracion_est, 
+                            modalidades.tipo_mod 
+                            from estudio 
+                            INNER JOIN institucion on estudio.inst_est = institucion.id_inst 
+                            INNER JOIN rubros on estudio.rub_est = rubros.id_tag 
+                            INNER JOIN modalidades on estudio.mod_est = modalidades.id_mod 
+                            WHERE estudio.categ_est = 2
+                          ";
+            $rselectPosg = mysqli_query($conexion, $selectPosg);
+              while ($fila = mysqli_fetch_array($rselectPosg)) {
+                $contador ++;
+                echo "
+                  <tr>
+                    <th scope='row'>".$contador."</th>
+                    <td>".$fila['nombre_est']."</td>
+                    <td>".$fila['nombre_ins']."</td>
+                    <td>".$fila['nombre_tag']."</td>
+                    <td>".$fila['duracion_est']."</td>
+                    <td>".$fila['tipo_mod']."</td>
+                    <td>".$fila['descripcion_est']."</td>
+                    <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
+                    <td><a type='button' class='btn' href='../src/php/delete_doc.php?id_doc=".$fila['id_est']."'>
+                          <i class='fa fa-trash-o'></i>
+                        </a>
+                    </td>
+                  </tr>
+                ";
+              }
+          ?>
+        </tbody>
       </table>
       <!-- formulario ingreso doctorados-->
             <div class='modal fade nuevoPostForm' tabindex='-1' role='dialog' aria-hidden='true'>
@@ -40,9 +78,9 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Id </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <?php
-                            $nuevoId = $count1['0']+1;
-                        echo "<input type='text' class='form-control' name='id_maes' value='".$nuevoId."' readonly >";
-                        ?>
+                            $contador = $contador + 1;
+                            echo "<input type='text' class='form-control' name='id_maes' value='".$contador."' readonly >";
+                          ?>
                         </div>
                       </div>
                       <div class="form-group">

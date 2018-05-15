@@ -10,14 +10,10 @@
     </div>
     <div class="x_content">
       <?php
-        $contador2 = 0;
+        $contador = 0;
         $selectProg = "SELECT programas.*, sponsor.nombre_spon FROM programas INNER JOIN sponsor WHERE programas.sponsor_prog = sponsor.id_spon";
         $rselectProg = mysqli_query($conexion, $selectProg);
-        //count para id instituciones -NO SE PORQUE TIENE QUE ESTAR AQUI PARA QUE FUNCIONE!
-        $selectNumIns = "SELECT COUNT(*) from estudio";
-        $rselectNumIns = mysqli_query($conexion, $selectNumIns);
-        $nIns = mysqli_fetch_array($rselectNumIns);
-         ?>
+      ?>
       <table class='table table-striped' id="tabla_prog">
         <thead>
           <tr>
@@ -28,14 +24,13 @@
           </tr>
         </thead>
         <tbody>
-          <?php
+        <?php
           // ---------------tabla---------------
-            while ($fila = mysqli_fetch_array($rselectProg)) {
-              $contador2++;
-              echo "
+          while ($fila = mysqli_fetch_array($rselectProg)) {
+            $contador++;
+            echo "
               <tr>
                 <th scope='row'>".$contador."</th>
-                <td>".$fila['id_prog']."</td>
                 <td>".$fila['nombre_prog']."</td>
                 <td>".$fila['nombre_spon']."</td>
                 <td>".$fila['descripcion_prog']."</td>
@@ -44,10 +39,11 @@
                       <i class='fa fa-trash-o'></i>
                     </a>
                 </td>
-              </tr>";
-               }
-              ?>
-            </tbody>
+              </tr>
+            ";
+          }
+        ?>
+        </tbody>
       </table>
       <!-- formulario ingreso doctorados-->
             <div class='modal fade nuevoProgForm' tabindex='-1' role='dialog' aria-hidden='true'>
@@ -64,9 +60,9 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Id </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <?php
-                            $nuevoId = $nIns['0']+1;
-                        echo "<input type='text' class='form-control' name='id_maes' value='".$nuevoId."' readonly >";
-                        ?>
+                            $contador = $contador + 1;
+                            echo "<input type='text' class='form-control' name='id_maes' value='".$contador."' readonly >";
+                          ?>
                         </div>
                       </div>
                       <div class="form-group">

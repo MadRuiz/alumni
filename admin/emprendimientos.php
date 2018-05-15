@@ -1,9 +1,9 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
   <div class="x_panel">
     <div class="x_title">
-      <h2>Doctorados<small></small></h2>
+      <h2>Emprendimientos<small></small></h2>
       <ul class="nav navbar-right panel_toolbox">
-        <li><a type="button" class="" data-toggle="modal" data-target=".nuevoDocForm"><i class="fa fa-plus"></i> Nuevo </a></li>
+        <li><a type="button" class="" data-toggle="modal" data-target=".nuevoEmpForm"><i class="fa fa-plus"></i> Nuevo </a></li>
         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
       </ul>
       <div class="clearfix"></div>
@@ -13,11 +13,10 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nombre</th>
-            <th>Institucion</th>
+            <th>Emprendimiento</th>
+            <th>Emprendedor</th>
             <th>Rubro</th>
-            <th>Duracion</th>
-            <th>Modalidad</th>
+            <th>Tiempo en funciones</th>
             <th>Descripcion</th>
           </tr>
         </thead>
@@ -26,34 +25,29 @@
         include '../src/php/selects.php';
         // ---------------tabla---------------
         $contador = 0;
-        $selectDoc = "SELECT 
-                        estudio.id_est, 
-                        estudio.nombre_est, 
-                        estudio.descripcion_est, 
-                        institucion.nombre_ins, 
-                        rubros.nombre_tag, 
-                        estudio.duracion_est, 
-                        modalidades.tipo_mod 
-                        from estudio 
-                        INNER JOIN institucion on estudio.inst_est = institucion.id_inst 
-                        INNER JOIN rubros on estudio.rub_est = rubros.id_tag 
-                        INNER JOIN modalidades on estudio.mod_est = modalidades.id_mod 
-                        WHERE estudio.categ_est = 4
+        $selectEmpr = "SELECT emprendimientos.id_emp, 
+                              emprendimientos.nombre_emp, 
+                              emprendimientos.responsable_emp, 
+                              emprendimientos.tiempo_emp, 
+                              emprendimientos.descripcion_emp, 
+                              rubros.nombre_tag 
+                        FROM emprendimientos 
+                        INNER JOIN rubros 
+                        ON emprendimientos.rubro_emp = rubros.id_tag
                       ";
-        $rselectDoc = mysqli_query($conexion, $selectDoc);
-          while ($fila = mysqli_fetch_array($rselectDoc)) {
+        $rselectEmpr = mysqli_query($conexion, $selectEmpr);
+          while ($fila = mysqli_fetch_array($rselectEmpr)) {
             $contador ++;
             echo "
               <tr>
                 <th scope='row'>".$contador."</th>
-                <td>".$fila['nombre_est']."</td>
-                <td>".$fila['nombre_ins']."</td>
+                <td>".$fila['nombre_emp']."</td>
+                <td>".$fila['responsable_emp']."</td>
                 <td>".$fila['nombre_tag']."</td>
-                <td>".$fila['duracion_est']."</td>
-                <td>".$fila['tipo_mod']."</td>
-                <td>".$fila['descripcion_est']."</td>
+                <td>".$fila['tiempo_emp']."</td>
+                <td>".$fila['descripcion_emp']."</td>
                 <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
-                <td><a type='button' class='btn' href='../src/php/delete_doc.php?id_doc=".$fila['id_est']."'>
+                <td><a type='button' class='btn' href='../src/php/delete_empr.php?id_empr=".$fila['id_emp']."'>
                       <i class='fa fa-trash-o'></i>
                     </a>
                 </td>
@@ -64,7 +58,7 @@
         </tbody>
       </table>
 <!-- formulario ingreso doctorados-->
-      <div class='modal fade nuevoDocForm' tabindex='-1' role='dialog' aria-hidden='true'>
+      <div class='modal fade nuevoEmpForm' tabindex='-1' role='dialog' aria-hidden='true'>
         <div class='modal-dialog modal-lg'>
           <div class="modal-content">
             <div class="modal-header">

@@ -23,6 +23,7 @@
   </head>
   <?php
     include 'conexion.php';
+    include '../src/php/selects.php';
 
     //select para estudios continuos
     $select1 = "SELECT estudio.id_est, estudio.nombre_est, estudio.duracion_est, estudio.descripcion_est, institucion.nombre_ins, institucion.sitio_ins, modalidades.tipo_mod, rubros.nombre_tag FROM estudio INNER JOIN institucion ON estudio.inst_est = institucion.id_inst INNER JOIN modalidades ON estudio.mod_est = modalidades.id_mod INNER JOIN rubros ON estudio.rub_est = rubros.id_tag";
@@ -98,26 +99,7 @@
       $countProgBecas ++;
     }
 
-    //select para numero de doctorados
-    $select2 = "SELECT COUNT(*) from estudio where categ_est = 4 ";
-    $rselect2 = mysqli_query($conexion, $select2);
-    $count1 = mysqli_fetch_array($rselect2);
-
-    //select para numero de maestrias
-    $select3 = "SELECT COUNT(*) from estudio where categ_est = 3 ";
-    $rselect3 = mysqli_query($conexion, $select3);
-    $count2 = mysqli_fetch_array($rselect3);
-
-    //select para numero de postgrados
-    $select4 = "SELECT COUNT(*) from estudio where categ_est = 2 ";
-    $rselect4 = mysqli_query($conexion, $select4);
-    $count3 = mysqli_fetch_array($rselect4);
-
-    //select para numero de diplomados
-    $select5 = "SELECT COUNT(*) from estudio where categ_est = 1 ";
-    $rselect5 = mysqli_query($conexion, $select5);
-    $count4 = mysqli_fetch_array($rselect5);
-
+   
     ?>
   <body class="nav-md">
     <div class="container body">
