@@ -1,13 +1,13 @@
 <?php
 include '../../production/conexion.php';
-  $doc_id = $_GET['id_doc'];
-  $doc_titulo = $_GET['titulo_doc'];
-  $doc_institucion = $_GET['inst_doc'];
-  $doc_programa = $_GET['prog_doc'];
-  $doc_rubro = $_GET['rub_doc'];
-  $doc_duracion = $_GET['duracion_doc'];
-  $doc_modalidad = $_GET['mod_doc'];
-  $doc_descripcion = $_GET['descripcion_doc'];
+  $doc_id = $_GET['doc_id'];
+  $doc_titulo = $_GET['doc_nombre'];
+  $doc_institucion = $_GET['doc_ins'];
+  $doc_programa = $_GET['doc_programa'];
+  $doc_rubro = $_GET['doc_rubro'];
+  $doc_duracion = $_GET['doc_duracion'];
+  $doc_modalidad = $_GET['doc_modalidad'];
+  $doc_descripcion = $_GET['doc_descripcion'];
   $insert_doc = "INSERT INTO `estudio`
                 (`id_est`,
                   `nombre_est`,
@@ -20,7 +20,7 @@ include '../../production/conexion.php';
                   `descripcion_est`
                 )
                 VALUES
-                (".$doc_id.",
+                (NULL,
                 '".$doc_titulo."',
                 4,
                 ".$doc_institucion.",

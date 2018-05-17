@@ -1,12 +1,12 @@
 <?php
 include '../../production/conexion.php';
-$doc_id = $_GET['id_doc'];
-$borrar_doc="DELETE FROM estudio WHERE id_est = ".$doc_id."";
-if(mysqli_query($conexion, $borrar_doc)){
+$maes_id = $_GET['maes_id'];
+$borrar_maes="DELETE FROM estudio WHERE id_est = ".$maes_id."";
+if(mysqli_query($conexion, $borrar_maes)){
  header('Location: ../../admin/admin_estudios.php');
  } else{
   echo "ERROR" . mysqli_error($conexion);
 }
 mysqli_close($conexion);
 
- ?>
+?>

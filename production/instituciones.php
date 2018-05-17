@@ -35,7 +35,7 @@
               $contador++;
               echo "
               <tr>
-                <th scope='row'>".$contador."</th>
+                <th scope='row'>".$fila['id_inst']."</th>
                 <td>".$fila['nombre_ins']."</td>
                 <td>".$fila['pais_ins']."</td>
                 <td>".$fila['ciudad_ins']."</td>

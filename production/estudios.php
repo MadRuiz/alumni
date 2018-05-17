@@ -139,7 +139,7 @@
                           <div class="icon"><i class="fa fa-book"></i></div>
                           <div class="count">
                             <?php
-                            echo $count1[0];
+                            echo $nDoc[0];
                             ?>
                           </div>
                           <h3>Doctorados</h3>
@@ -151,7 +151,7 @@
                           <div class="icon"><i class="fa fa-briefcase"></i></div>
                           <div class="count">
                             <?php
-                            echo $count2[0];
+                            echo $nMaes[0];
                             ?>
                             </div>
                           <h3>Maestrías</h3>
@@ -163,7 +163,7 @@
                           <div class="icon"><i class="fa fa-file"></i></div>
                           <div class="count">
                             <?php
-                            echo $count3[0];
+                            echo $nPosg[0];
                             ?>
                           </div>
                           <h3>Post-grados</h3>
@@ -175,7 +175,7 @@
                           <div class="icon"><i class="fa fa-font"></i></div>
                           <div class="count">
                             <?php
-                            echo $count4[0];
+                            echo $nDip[0];
                             ?>
                           </div>
                           <h3>Diplomados</h3>
