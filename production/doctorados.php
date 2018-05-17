@@ -40,7 +40,10 @@
                         INNER JOIN modalidades on estudio.mod_est = modalidades.id_mod 
                         WHERE estudio.categ_est = 4
                       ";
+
         $rselectDoc = mysqli_query($conexion, $selectDoc);
+        $nDoc = $nDoc['0']+1;
+        $nEst = $nEst['0']+1;
           while ($fila = mysqli_fetch_array($rselectDoc)) {
             $contador ++;
             echo "
@@ -78,90 +81,28 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Id </label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
                     <?php
-                    $contador = $contador + 1;
-                  echo "<input type='text' class='form-control' name='id_maes' value='".$contador."' readonly >";
+                  echo "<input type='text' class='form-control' name='doc_id' value='".$nEst."' readonly >";
                   ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Titulo</label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
-                    <input type="text" class="form-control" placeholder="Nombre del Doctorado" id="titulo_doc" name="titulo_doc">
+                    <input type="text" class="form-control" placeholder="Nombre del Doctorado" id="nombre_doc" name="titulo_doc">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Institucion que imparte</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución que imparte:</label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
-                    <select class="select2_single form-control" tabindex="-1" name="inst_doc">
-<?php 
+                    <select class="select2_single form-control" tabindex="-1" name="doc_ins">
+                    <?php 
+                      while ($fila = mysqli_fetch_array($rselecIns)) {
                         echo "
-                      <option value='".$fila['id_inst']."'>".$fila['nombre_ins']."</option>
-                    ";
-                    $contador2 = $contador2 + 1;
-                      
-                    ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Programa de becas</label>
-                  <div class="col-md-9 col-sm-9 col-xs-12">
-                    <select class="select2_single form-control" tabindex="-1" name="prog_doc">
-                      <?php
-                      $contador3 = 1;
-                      while ($fila = mysqli_fetch_array($rselectProg)) {
-                        echo "
-                      <option value='".$fila['id_prog']."'>".$fila['nombre_prog']."</option>
-                    ";
-                    $contador3 = $contador3 + 1;
-                    }
-                    ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Rubro al que pertenece</label>
-                  <div class="col-md-9 col-sm-9 col-xs-12">
-                    <select class="select2_single form-control" tabindex="-1" name="rub_doc">
-                      <?php
-                      $contador4 = 1;
-                      while ($fila = mysqli_fetch_array($rselectRub)) {
-                        echo "
-                      <option value='".$fila['id_tag']."'>".$fila['nombre_tag']."</option>
-                    ";
-                    $contador4 = $contador4 + 1;
-                    }
-                    ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Duracion</label>
-                  <div class="col-md-9 col-sm-9 col-xs-12">
-                    <input type="text" class="form-control" placeholder="3 meses, 6 meses, 1 año, etc" name="duracion_doc">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Modalidad</label>
-                  <div class="col-md-9 col-sm-9 col-xs-12">
-                    <select class="select2_single form-control" tabindex="-1" name="mod_doc">
-                      <?php
-                      $contador5 = 1;
-                      while ($fila = mysqli_fetch_array($rselectMod)) {
-                        echo "
-                      <option value='".$fila['id_mod']."'>".$fila['tipo_mod']."</option>
-                    ";
-                    $contador5 = $contador5 + 1;
+                          <option value='".$fila['id_inst']."'>".$fila['nombre_ins']."</option>
+                        ";
                       }
-                      ?>
+                    ?>
                     </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripcion del doctorado<span class="required">*</span>
-                  </label>
-                  <div class="col-md-9 col-sm-9 col-xs-12">
-                    <textarea class="form-control" rows="3" placeholder="..." name="descripcion_doc"></textarea>
                   </div>
                 </div>
             </div>

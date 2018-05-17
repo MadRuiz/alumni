@@ -10,14 +10,12 @@
     </div>
     <div class="x_content">
       <?php
-      $contador = 0;
-      $selectIns = "SELECT * FROM `institucion`";
-      $rselectIns = mysqli_query($conexion, $selectIns);
-      //count para id instituciones -NO SE PORQUE TIENE QUE ESTAR AQUI PARA QUE FUNCIONE!
-      $selectNumIns = "SELECT COUNT(*) from estudio";
-      $rselectNumIns = mysqli_query($conexion, $selectNumIns);
-      $nIns = mysqli_fetch_array($rselectNumIns);
-       ?>
+        include '../src/php/selects.php';
+        $contador = 0;
+        $selectIns = "SELECT * FROM `institucion`";
+        $rselectIns = mysqli_query($conexion, $selectIns);
+        $nIns = $nIns['0'] + 1;
+      ?>
       <table class='table table-striped bulk_action' id="tabla_ins">
         <thead>
           <tr>
@@ -55,50 +53,71 @@
         </tbody>
       </table>
       <!-- formulario ingreso instituciones-->
-            <div class='modal fade nuevaInsForm' tabindex='-1' role='dialog' aria-hidden='true'>
-              <div class='modal-dialog modal-lg'>
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Agregar Institucion</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form class="form-horizontal form-label-left" action="../src/php/insert_ins.php" method="get">
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input required type="text" class="form-control" placeholder="Lugar donde se imparte" name="nombre_ins">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pais</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input required type="text" class="form-control" placeholder="" name="pais_ins">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input required type="text" class="form-control" placeholder="" name="ciudad_ins">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="number" class="form-control" name="tel_ins">
-                        </div>
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-                    <button type="submit" class="btn btn-primary" value="submit" onclick="">Guardar cambios</button>
-                      </form>
-                  </div>
-
+      <div class='modal fade nuevaInsForm' tabindex='-1' role='dialog' aria-hidden='true'>
+        <div class='modal-dialog modal-lg'>
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Agregar Institución</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal form-label-left" action="../src/php/insert_ins.php" method="get">
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Id</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <?php
+                    echo "
+                      <input type='text' class='form-control' name='ins_id' value='".$nIns."' readonly>
+                    ";
+                  ?>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre: </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_nombre">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">País</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_pais">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_ciudad">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_telefono">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Correo</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_correo">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Url</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" placeholder="" name="ins_sitio">
                 </div>
               </div>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+              <button type="submit" class="btn btn-primary" value="submit" onclick="">Guardar cambios</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

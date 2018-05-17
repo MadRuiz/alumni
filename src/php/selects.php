@@ -1,9 +1,24 @@
 <?php 
 include '../production/conexion.php';
- //select para numero de doctorados
+    //count para id instituciones
+    $selectNumIns = "SELECT COUNT(*) from instituciones";
+    $rselectNumIns = mysqli_query($conexion, $selectNumIns);
+    $nIns = mysqli_fetch_array($rselectNumIns);
+
+    //datos de programas
+    $selectNumProg = "SELECT COUNT(*) from programas";
+    $rselectNumProg = mysqli_query($conexion, $selectNumProg);
+    $nProg = mysqli_fetch_array($rselectNumProg);
+
+    //select numero de estudios
+    $selectNumEst = "SELECT COUNT(*) from estudio";
+    $rselectNumEst = mysqli_query($conexion, $selectNumEst);
+    $nEst = mysqli_fetch_array($rselectNumEst); 
+
+    //select para numero de doctorados
     $select2 = "SELECT COUNT(*) from estudio where categ_est = 4 ";
     $rselect2 = mysqli_query($conexion, $select2);
-    $count1 = mysqli_fetch_array($rselect2);
+    $nDoc = mysqli_fetch_array($rselect2);
 
     //select para numero de maestrias
     $select3 = "SELECT COUNT(*) from estudio where categ_est = 3 ";
@@ -31,4 +46,10 @@ include '../production/conexion.php';
     //datos de modalidades
     $selectMod = "SELECT * FROM modalidades";
     $rselectMod = mysqli_query($conexion, $selectMod);
+
+    //datos de sponsor
+    $selectSpon = "SELECT * FROM sponsor";
+    $rselectSpon = mysqli_query($conexion, $selectSpon);
+
+
  ?>                      
