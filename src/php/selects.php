@@ -10,6 +10,11 @@ include '../production/conexion.php';
     $rselectNumProg = mysqli_query($conexion, $selectNumProg);
     $nProg = mysqli_fetch_array($rselectNumProg);
 
+    //select numero de ofertas
+    $selectNumOfer = "SELECT COUNT(*) from ofertas";
+    $rselectNumOfer = mysqli_query($conexion, $selectNumOfer);
+    $nOfer = mysqli_fetch_array($rselectNumOfer); 
+
     //select numero de estudios
     $selectNumEst = "SELECT COUNT(*) from estudio";
     $rselectNumEst = mysqli_query($conexion, $selectNumEst);
@@ -58,6 +63,27 @@ include '../production/conexion.php';
     //datos de instituciones
     $selectIns = "SELECT * FROM institucion";
     $rselectIns = mysqli_query($conexion, $selectIns);
+    
+    //datos de departamentos
+    $selectDepto = "SELECT * FROM departamentos";
+    $rselectDepto = mysqli_query($conexion, $selectDepto);   
 
+    //datos de cargos
+    $selectCarg = "SELECT * FROM cargos";
+    $rselectCarg = mysqli_query($conexion, $selectCarg);   
 
- ?>                      
+    //numero cargos 
+    $selectNumCarg = "SELECT * FROM cargos";
+    $rselectNumCarg = mysqli_query($conexion, $selectNumCarg);     
+    $nCarg = mysqli_fetch_array($rselectNumCarg);
+
+    //datos de empresas
+    $selectEmpr = "SELECT * FROM empresas";
+    $rselectEmpr = mysqli_query($conexion, $selectEmpr);   
+
+    //numero empresas 
+    $selectNumEmpr = "SELECT * FROM empresas";
+    $rselectNumEmpr = mysqli_query($conexion, $selectNumEmpr);     
+    $nEmpr = mysqli_fetch_array($rselectNumEmpr);
+
+ ?>                  
