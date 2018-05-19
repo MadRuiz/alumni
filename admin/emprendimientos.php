@@ -25,7 +25,7 @@
         include '../src/php/selects.php';
         // ---------------tabla---------------
         $contador = 0;
-        $selectEmpr = "SELECT emprendimientos.id_emp, 
+        $selectEmp = "SELECT emprendimientos.id_emp, 
                               emprendimientos.nombre_emp, 
                               emprendimientos.responsable_emp, 
                               emprendimientos.tiempo_emp, 
@@ -35,8 +35,8 @@
                         INNER JOIN rubros 
                         ON emprendimientos.rubro_emp = rubros.id_tag
                       ";
-        $rselectEmpr = mysqli_query($conexion, $selectEmpr);
-          while ($fila = mysqli_fetch_array($rselectEmpr)) {
+        $rselectEmp = mysqli_query($conexion, $selectEmp);
+        while ($fila = mysqli_fetch_array($rselectEmp)) {
             $contador ++;
             echo "
               <tr>
@@ -47,7 +47,7 @@
                 <td>".$fila['tiempo_emp']."</td>
                 <td>".$fila['descripcion_emp']."</td>
                 <td><a type='button' class='btn'><i class='fa fa-pencil'></i></a></td>
-                <td><a type='button' class='btn' href='../src/php/delete_empr.php?id_empr=".$fila['id_emp']."'>
+                <td><a type='button' class='btn' href='../src/php/delete_emp.php?emp_id=".$fila['id_emp']."'>
                       <i class='fa fa-trash-o'></i>
                     </a>
                 </td>
@@ -68,40 +68,54 @@
             </div>
             <div class="modal-body">
               <form class="form-horizontal form-label-left" action="../src/php/insert_emp.php" method="get">
-               <div class="form-group">
+              <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Id </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
                   <?php
+                    
+                    $nEmp = $nEmp['0'] + 2;
                     echo "
-                      <input type='text' class='form-control' name='' value='".$VARIABLEDECOUNT."' readonly>
+                      <input type='text' class='form-control' name='emp_id' value='".$nEmp."' readonly>
                     ";
                   ?>
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">NOMBRE</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre del emprendimiento:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="PLACEHOLDER" name="NAME">
+                  <input type="text" class="form-control"  name="emp_nombre">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">NOMBRE</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Emprendedor:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="PLACEHOLDER" name="NAME">
+                  <input type="text" class="form-control" name="emp_responsable">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">NOMBRE</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Rubro:</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <select class="select2_single form-control" tabindex="-1" name="NAME">
+                  <select class="select2_single form-control" tabindex="-1" name="emp_rubro">
                   <?php 
-                    while ($fila = mysqli_fetch_array($VARIABLEDEDATOS)) {
+                    while ($fila = mysqli_fetch_array($rselectRub)) {
                       echo "
-                        <option value='".$fila['IDCAMPO']."'>".$fila['NOMBRECAMPO']."</option>
+                        <option value='".$fila['id_tag']."'>".$fila['nombre_tag']."</option>
                       ";
                     }
                   ?>
                   </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Tiempo en funciones:</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control" name="emp_tiempo">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción del emprendimiento:<span class="required">*</span></label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <textarea class="form-control" rows="3" placeholder="..." name="emp_descripcion"></textarea>
                 </div>
               </div>
             </div>

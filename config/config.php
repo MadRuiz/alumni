@@ -4,7 +4,7 @@
 	define('DB_HOST', 'localhost');//DB_HOST:  generalmente suele ser "127.0.0.1"
 	define('DB_USER', 'root');//Usuario de tu base de datos
 	define('DB_PASS', '');//Contraseña del usuario de la base de datos
-	define('DB_NAME', 'alumni_g9');//Nombre de la base de datos
+	define('DB_NAME', 'alumniug_alumni');//Nombre de la base de datos
 
 	$con=@mysqli_connect(localhost,root,usbw,alumni);
     if(!$con){

@@ -86,4 +86,21 @@ include '../production/conexion.php';
     $rselectNumEmpr = mysqli_query($conexion, $selectNumEmpr);     
     $nEmpr = mysqli_fetch_array($rselectNumEmpr);
 
+    //datos de capacitaciones
+    $selectCap = "SELECT * FROM capacitaciones";
+    $rselectCap = mysqli_query($conexion, $selectCap);   
+
+    //numero capacitaciones 
+    $selectNumCap = "SELECT * FROM capacitaciones";
+    $rselectNumCap = mysqli_query($conexion, $selectNumCap);     
+    $nCap = mysqli_fetch_array($rselectNumCap);
+
+    //datos de emprendimientos
+    $selectEmp = "SELECT * FROM emprendimientos";
+    $rselectEmp = mysqli_query($conexion, $selectEmp);   
+
+    //numero emprendimientos 
+    $selectNumEmp = "SELECT * FROM emprendimientos";
+    $rselectNumEmp = mysqli_query($conexion, $selectNumEmp);     
+    $nEmp = mysqli_fetch_array($rselectNumEmp);
  ?>                  

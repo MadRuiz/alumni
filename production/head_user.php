@@ -38,8 +38,8 @@
               <div class="menu_section menu_fixed">
                 <h3>General</h3>
                 <ul class="nav side-menu menu_fixed">
-                  <li><a href="noticias.php"><i class="fa fa-home"></i> Inicio </a></li>
                   <li><a href="noticias.php"><i class="fa fa-newspaper-o"></i> Noticias</a></li>
+                  <li><a href="logros.php"><i class="fa fa-star"></i> Logros</a></li>
                   <li><a href="bolsadetrabajo.php"><i class="fa fa-briefcase"></i> Bolsa de trabajo</a></li>
                   <li><a href="estudios.php"><i class="fa fa-book"></i> Estudios contínuos </a></li>
                   <li><a href="emprendimientos.php"><i class="fa fa-cogs"></i> Emprendimientos</a></li>
