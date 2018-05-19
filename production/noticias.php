@@ -105,32 +105,33 @@
                           include '../src/php/select_noti.php';
                           //--tabla--//
                           $contador = 0;
-            $select_noti = "SELECT 
+                          $select_noti = "SELECT 
                             * 
                             from noticias
                             where noticias.cat_noti=1";
                             $rselectNoti = mysqli_query($conexion, $select_noti);
-              while ($fila = mysqli_fetch_array($rselectNoti)) {
-                if (isset($rselectNoti)) {
+                            while ($fila = mysqli_fetch_array($rselectNoti)) {
+                              if (isset($rselectNoti)) {
 
-                  echo' <div class="block_content">
-                  <h2 class="title">
-                  <a>'.$fila["Titulo"].'</a>
-                  </h2>
-                  <span class="image">
-                  <img  alt="img"/>'.$fila["Imagen"].'
-                  </span>
-                  <p class="excerpt"> <a>'.$fila["Contenido"].'</a>
-                  </p>
-                  </div>
-                  </div>  
-                  </li>
-                  </ul>';
-                  }else{
-                  echo "<p> No hay ninguna noticia creada</p>";
-                  } 
-                }
-                ?>
+                                echo' <div class="block_content">
+                                <h2 class="title">
+                                <a>'.$fila["Titulo"].'</a>
+                                </h2>
+                                <span class="image">
+                                <img  alt="img"/>'.$fila["Imagen"].'
+                                </span>
+                                <p class="excerpt"> <a>'.$fila["Contenido"].'</a>
+                                </p>
+                                </div>
+                                </div>  
+                                </li>';
+                                }else{
+                                echo "<p> No hay ninguna noticia creada</p>";
+                                } 
+                              }
+                              ?>
+                                </ul>
+                      
                 </div>
               </div>
             </div>

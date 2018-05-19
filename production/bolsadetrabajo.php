@@ -18,8 +18,9 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-	</head>
+  </head>
   
+ 
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -27,220 +28,141 @@
        <div class="right_col" role="main">
             <div class="">
               <div class="title_left">
-                <h3>Bolsa de trabajo</h3>
+                <h3>Bolsa de trabajo <small>La bolsa de tu confianza</small></h3>
               </div>
-              <div class="title_right">
-			  <h3>Tu Bolsa de Trabajo de tu confianza</h3>
-              </div>
-			 </div>
-					<div class="col-md-9 col-lg-offset-1">
-					<div class="panel panel-default ">
-					<div class="panel-body ">
-				<div class=" col-md-6 col-xs-4  pull-left ">
-                    <input type="text" class="form-control" placeholder="Escribe cargo o área profesional">
-					Trabaja de:  Auxiliar contable,  Motorista,  Ejecutivo de ventas
-                  </div>
-				 <button type="button" class="btn btn-primary btn-sm pull-right">Buscar Empleos</button>
-				  <div class=" col-xs-4  pull-center ">
-                    <input type="text" class="form-control" placeholder="Lugar">
-					Trabaja en:  San Salvador,  La Libertad
-                  </div>
-				 </div>
-                </div>		  
-	</div>
-			<div class="row top_tiles">
-                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12 col-lg-offset-1">
-                  <div class="tile-stats ">
-                    <h1 class="text-center">Categorias</h1>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="count">
-                      
-                    </div>
-                    <h1 class="text-center">Departamentos</h1>
-                  </div>
-                </div>
-				      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="count">
-                    </div>
-                    <h1 class="text-center">Cargo</h1>
-                  </div>
-                </div>
-              </div>
-			  
-						<div class="col-md-3 col-sm-12 col-xs-12 col-lg-offset-1">
-                      <div>
-                        <div class="xy_title">
-                          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>       
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="x_panel">
+                      <div class="x_content">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-default btn-lg ">Categoría</button>
+                              <button type="button" class="btn btn-default dropdown-toggle btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-default btn-lg ">Departamento</button>
+                              <button type="button" class="btn btn-default dropdown-toggle btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-default btn-lg ">Cargo</button>
+                              <button type="button" class="btn btn-default dropdown-toggle btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                           <span class="input-group-btn">
+                                <button class="btn btn-default btn-lg btn-primary" type="button">Buscar!</button>
+                              </span>
                         </div>
-					    <select multiple class="form-control">
-							<option>Mercadeo | Ventas</option>
-							<option>Finanzas | Contabilidad | Auditoría</option>
-							<option>Banca | Servicios Financieros</option>
-							<option>Informática | Internet</option>
-							<option>Producción | Ingeniería | Calidad </option>
-							<option>Restaurantes  </option>
-							<option>Apoyo de Oficina </option>
-							<option>Puestos Profesionales </option>
-							<option>Call Center </option>
-							<option>Almacenamiento</option>
-							<option>Publicidad | Comunicaciones | Servicios </option>
-							<option>Operaciones | Logística </option>
-							<option>Recursos Humanos </option>
-						</select>
                       </div>
                     </div>
-					
-					<div class="col-md-3 col-sm-12 col-xs-12 ">
-                      <div>
-                        <div class="xy_title">
-                          <div class="clearfix"></div>
-                        </div>
-					    <select multiple class="form-control">
-							<option>Ahuachapán</option>
-							<option>Sonsonate</option>
-							<option>Santa Ana</option>
-							<option>Cabañas</option>
-							<option>Chalatenango</option>
-							<option>Cuscatlán</option>
-							<option>La Libertad</option>
-							<option>La Paz</option>
-							<option>San Salvador</option>
-							<option>San Vicente</option>
-							<option>Morazán</option>
-							<option>San Miguel</option>
-							<option>Usulután</option>
-							<option>La Unión</option>
-						</select>
-                      </div>
-                    </div>
-				
-						<div class="col-md-3 col-sm-12 col-xs-12 ">
-                      <div>
-                        <div class="xy_title">
-                          <div class="clearfix"></div>
-                        </div>
-					    <select multiple class="form-control">
-							<option>Cualquier Cargo</option>
-							<option>Ejecutiv@ de Ventas</option>
-							<option>Analista | Programador</option>
-							<option>Vendedor Rutero</option>
-							<option>Asistente Contable</option>
-							<option>Cajer@</option>
-							<option>Asistente Administrativo</option>
-							<option>Ejecutiv@ de Call Center</option>
-							<option>Supervisor de Ventas</option>
-							<option>Cocinero</option>
-							<option>Gestor de Cobros</option>
-							<option>Vendedor</option>
-							<option>Mensajero</option>
-							<option>Promotor(a) de Ventas</option>
-							<option>Repartidor</option>
-							<option>Chofer</option>
-							<option>Ejecutiv@ de Afiliación | Tarjeta de Crédito</option>
-							<option>Ejecutiv@ Corporativo</option>
-							<option>Ejecutiv@ de Cuenta</option>
-							<option>Auxiliar de Bodega</option>
-							<option>Ejecutiv@ Pyme</option>
-							<option>Otros empleos</option>
-							<option>Asistente de Recursos Humanos </option>
-							<option>Contador General</option>
-						</select>
-                      </div>
-                    </div>
-					
-					
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+          
+          
+          <?php
+        include '../src/php/selects.php';
+        // ---------------tabla---------------
+        $contador = 0;
+        $selectOfe = "SELECT ofertas.id_oferta, 
+                               ofertas.nombre_of, 
+                               ofertas.direccion_of, 
+                               ofertas.salariomin_of, 
+                               ofertas.salariomax_of, 
+                               ofertas.funciones_of, 
+                               ofertas.requisitos_of, 
+                               cargos.nombre_carg, 
+                               empresas.nombre_empresa, 
+                               departamentos.nombre_depto, 
+                               rubros.nombre_tag
+                        FROM ofertas 
+                        INNER JOIN cargos ON ofertas.cargo_of = cargos.id_carg
+                        INNER JOIN empresas ON ofertas.empresa_of = empresas.id_empresa
+                        INNER JOIN departamentos ON ofertas.deptos_of = departamentos.id_depto
+                        INNER JOIN rubros ON ofertas.categorias_of = rubros.id_tag
+            ";
+            ?>
             <div class="col-md-12">
-			<br></br>
+      <br></br>
               <div class="x_panel">
-               
                   <div class="clearfix"></div>
-              
                 <div class="x_content">
                   <ul class="list-unstyled msg_list">
-                    <li>
+                    
+                 <?php
+              $rselectOfe = mysqli_query($conexion, $selectOfe);
+              $nOfer = $nOfer['0']+1;
+              while ($fila = mysqli_fetch_array($rselectOfe)) {
+              $contador ++;
+              echo "  
+              <li>
                       <a>
-                        <span class="image">
-                          <img src="images/red.png" alt="img" />
+                        <span><span><h2><strong>".$fila['nombre_of']."</strong></h2></span>
+              <span><h4><em>".$fila['nombre_empresa']." | ".$fila['nombre_depto']." </em></h4></span>
+              <span><h5>Salario ".$fila['salariomin_of']."   a   ".$fila['salariomax_of']."</h5></span>
+              <h4><strong>Funciones de puesto:</strong>".$fila['funciones_of']."</h4>
+              <h4><strong>Requisitos:</strong> ".$fila['requisitos_of']."</h4>
                         </span>
-                        <span>
-                          <span><h2><strong>Pasantia para Desarrollador Web</strong></h2></span>
-						  <span><h4><em>La Libertad | El Salvador</em></h4></span>
-						  <span><h5>Salario    $ 300   a   $ 300</h5></span>
-                        </span>
-                        <span class="message">
-                          <h4><strong>Funciones de puesto:</strong> Dar seguimiento y soporte en los diferentes departamentos en desarrollo de servicio wed.</h4>
-                        </span>
-                      </a>
+<button type='button' class='btn btn-primary btn-xs' data-toggle='modal' data-target=''>Aplicar a la Oferta</button>
+            <button type='button' class='btn btn-primary btn-xs' data-toggle='modal' data-target=''>Mas Información</button>      
+                     </a>
                     </li>
-                    <li>
-                   <a>
-                        <span class="image">
-                          <img src="images/carosa.jpg" alt="img" />
-                        </span>
-                        <span>
-                          <span><h2><strong>DEPENDIENTE DE FARMACIA</strong></h2></span>
-						  <span><h4><em>La Libertad | El Salvador</em></h4></span>
-                        </span>
-                        <span class="message">
-                          <h4><strong>Funciones de puesto:</strong> -Conocimiento de productos Comercial - Conocimiento de manejo de caja.</h4>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                       <a>
-                        <span class="image">
-                          <img src="images/popular.jpg" alt="img" />
-                        </span>
-                        <span>
-                          <span><h2><strong>Gerente de Supermercado</strong></h2></span>
-						  <span><h4><em>San Salvador | El Salvador</em></h4></span>
-						  <span><h5>Salario    $ 600   a   $ 800</h5></span>
-                        </span>
-                        <span class="message">
-                          <h4><strong>Funciones de puesto:</strong> DEstrategias de ventas. Manejo de Personal Experiencia full en supermercados.</h4>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                        <a>
-                        <span class="image">
-                          <img src="images/hermel.jpg" alt="img" />
-                        </span>
-                        <span>
-                          <span><h2><strong>Display para SAN SALVADOR</strong></h2></span>
-						  <span><h4><em>San Salvador | El Salvador</em></h4></span>
-						  <span><h5>Salario    $ 315   a   $ 315</h5></span>
-                        </span>
-                        <span class="message">
-                          <h4><strong>Funciones de puesto:</strong> Rotación de producto Inventario Promover el producto..</h4>
-                        </span>
-                      </a>
-                    </li>
+                        ";
+                      }
+      ?>  
+                                   
+                      
                   </ul>
+        
                 </div>
-				
-
-				
+        
+        
               </div>
-			  
-			  
-			  
-			  
+        
+        
+        
+        
             </div>
-					
-					
+          
+          
                   </div>
                 </div>
-				
-				
-				
+        
               </div>
-			  
-		<!-- /page content -->
+        
+    <!-- /page content -->
 
         <!-- footer content -->
         <?php include 'footer.php'; ?>

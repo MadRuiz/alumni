@@ -12,6 +12,15 @@
 
 
                 </ul>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-sitemap"></i> Panel de control <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="admin_estudios.php">Estudios contínuos</a>
+                      <li><a href="admin_emprender.php">Emprendimientos</a>
+                      <li><a href="admin_bolsa.php">Bolsa de trabajo</a>
+                    </ul>
+                  </li>
+                </ul>
             </div>
         </div><!-- /sidebar menu -->
     </div>

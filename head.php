@@ -13,7 +13,7 @@
         $name = $row['name'];
         $email = $row['email'];
         $profile_pic = $row['profile_pic'];
-        $created_at = $row['created_at'];
+      
   
     }
 
@@ -77,5 +77,5 @@
                                     </div>
                                 </div>
                             <!-- /menu profile quick info -->
-
+                            
                         <br />

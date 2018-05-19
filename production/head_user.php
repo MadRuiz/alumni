@@ -3,13 +3,13 @@
     include "conexion.php";
 
     $id=$_SESSION['user_id'];
-    $query=mysqli_query($conexion,"SELECT * from user where id=$id");
+    $query=mysqli_query($conexion,"SELECT * from usuario where id=$id");
     while ($row=mysqli_fetch_array($query)) {
-        $username = $row['username'];
-        $name = $row['name'];
-        $email = $row['email'];
-        $profile_pic = $row['profile_pic'];
-        $created_at = $row['created_at'];
+        $username = $row['nick_user'];
+        $name = $row['pass_user'];
+        $email = $row['status_user'];
+        $profile_pic = $row['perfil_user'];
+        
   
     }
 

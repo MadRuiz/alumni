@@ -44,7 +44,6 @@
                       <li><a href="admin_estudios.php">Estudios contínuos</a>
                       <li><a href="admin_emprender.php">Emprendimientos</a>
                       <li><a href="admin_bolsa.php">Bolsa de trabajo</a>
-                      <li><a href="admin_users.php">Usuarios</a>
                     </ul>
                   </li>
                 </ul>
