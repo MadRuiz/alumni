@@ -68,43 +68,48 @@
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Id</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">              
-                      <input type="text" class="form-control" name="ins_id" value="".$nIns."" readonly>
+                      <input type="text" class="form-control" name="ins_id" value="'.$fila['id_inst'].'" readonly>
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre: </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="'.$fila['nombre_ins'].'" name="ins_nombre">
+                  <input type="text" class="form-control" placeholder="'.$fila['nombre_ins'].'" name="upins_nombre">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">País</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="" name="ins_pais">
+                  <input type="text" class="form-control" placeholder="'.$fila['pais_ins'].'" name="upins_pais">
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="" name="ins_ciudad">
+                  <input type="text" class="form-control" placeholder="'.$fila['ciudad_ins'].'" name="upins_ciudad">
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="" name="ins_telefono">
+                  <input type="text" class="form-control" placeholder="'.$fila['telefono_ins'].'" name="upins_telefono">
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Correo</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="" name="ins_correo">
+                  <input type="text" class="form-control" placeholder="'.$fila['correo_ins'].'" name="upins_correo">
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Url</label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" class="form-control" placeholder="" name="ins_sitio">
+                  <input type="text" class="form-control" placeholder="'.$fila['sitio_ins'].'" name="upins_sitio">
                 </div>
               </div>
             </div>

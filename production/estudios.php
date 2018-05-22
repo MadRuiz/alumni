@@ -226,12 +226,16 @@
                                             </button>
                                             <h4 class="modal-title" id="myModalLabel">'.$fila["nombre_est"].'</h4>
                                           </div>
-                                          <div class="modal-body">
-                                            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                                          <div class="modal-body">';
+                                    if (!empty($fila['id_prog'])) {
+                                      echo '<div class="alert alert-success alert-dismissible fade in" role="alert">
                                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                               </button>
                                               <strong>Hey!</strong> Parece que este estudio pertenece a un programa de becas :D
-                                            </div>
+                                            </div>';
+                                    }
+                                            
+                                    echo '
                                             <div class="row">
                                                 <div class="col-md-3 text-right text-uppercase"><strong>Titulo</strong></div>
                                                 <div class="col-md-9">'.$fila["nombre_est"].'</div>

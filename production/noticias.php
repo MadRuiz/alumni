@@ -50,19 +50,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                   <div class="item active">
-                    <img src="images/emprender.jpg" alt="...">
+                    <img src="images/n1.jpg" alt="...">
                     <div class="carousel-caption">
                       Evento 1
                     </div>
                   </div>
                   <div class="item">
-                    <img src="images/emprender.jpg" alt="...">
+                    <img src="images/n2.jpg" alt="...">
                     <div class="carousel-caption">
                       Evento 2
                     </div>
                   </div>
                   <div class="item">
-                    <img src="images/emprender.jpg" alt="...">
+                    <img src="images/n3.jpg" alt="...">
                     <div class="carousel-caption">
                       Evento 3
                     </div>
@@ -98,9 +98,6 @@
 
                 <div class="x_content">
                   <ul class="list-unstyled timeline">
-                    <li>
-                      <div class="block">
-                        <div class="tags">
                           <?php 
                           include '../src/php/select_noti.php';
                           //--tabla--//
@@ -113,7 +110,11 @@
                             while ($fila = mysqli_fetch_array($rselectNoti)) {
                               if (isset($rselectNoti)) {
 
-                                echo' <div class="block_content">
+                                echo' 
+                                <li>
+                      <div class="block">
+                        <div class="tags">
+                        <div class="block_content">
                                 <h2 class="title">
                                 <a>'.$fila["Titulo"].'</a>
                                 </h2>
@@ -210,8 +211,7 @@
                 </div>
                 <div class="x_content">
                   <ul class="list-unstyled msg_list">
-                    <li>
-                      <a>
+                    
                        <?php 
                           include '../src/php/select_noti.php';
                           //--tabla--//
@@ -225,7 +225,9 @@
                           if (isset($rselect_evento)) {
                             while ($fila = mysqli_fetch_array($rselect_evento)) {
 
-                            echo'<span>'.$fila["Titulo"].'</span>
+                            echo'
+                            <li>
+                      <a><span>'.$fila["Titulo"].'</span>
                             <span class="image"><img alt="img">'.$fila["Imagen"].'</img>;
                             </span>
 

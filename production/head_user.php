@@ -2,17 +2,17 @@
     session_start();
     include "conexion.php";
 
-    $id=$_SESSION['user_id'];
+    /*$id=$_SESSION['user_id'];
     $query=mysqli_query($conexion,"SELECT * from usuario where id=$id");
     while ($row=mysqli_fetch_array($query)) {
         $username = $row['nick_user'];
         $name = $row['pass_user'];
         $email = $row['status_user'];
         $profile_pic = $row['perfil_user'];
-        
+       
   
     }
-
+ */
 ?>        
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -27,7 +27,7 @@
               </div>
               <div class="profile_info">
                 <span>Bienvenida,</span>
-                <h2><a href="perfil.php" class="text-muted"><?php echo $name;?></a></h2>
+                <h2><a href="perfil.php" class="text-muted"><?php //echo $name;?>NOMBRE</a></h2>
               </div>
               <div class="clearfix"></div>
             </div>
